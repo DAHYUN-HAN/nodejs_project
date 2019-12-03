@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>도서관 꽃이 피었습니다.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.2/sweetalert2.min.css' rel='stylesheet' type='text/css'>
+</head>
+<body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+        <div class="top">
+        <!-- Logo -->
+                  {{#if isUserLogedIn}}
+                   <div id="logo">
+							<span class="image avatar48"><img src="{{user.image}}" alt=""/></span>
+							<h1 id="title"><a href="/mypage">{{user.name}}</a></h1>
+							<p>{{user.email}}</p>
+                       <button type="button" onclick="{{status.link}}" class="btnlogout">{{status.print}}</button>
+                    <button type="button" onclick="location.href ='/logout'" class="btnlogout">로그아웃</button>
+                    </div>
+                {{else}}
+                   <div>
+							<p></p>
+						</div>
+                    <div class="col-md-12">
+    {{#each alert.message}}
+        <div class="alert alert-success">
+            {{this}}
+        </div>
+    {{/each}}
+    {{#each alert.error}}
+        <div class="alert alert-danger">
+            {{this}}
+        </div>
+    {{/each}}
+    <form method="post" action="/login_user">        
+        <div class="form-group row">
+            <label for="example-date-input" class="col-form-label">&nbsp&nbsp이메일</label>
+            <div class="loginsize">
+                <input name="user_email" class="form-control" type="email"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-date-input" class="col-form-label">비밀번호</label>
+            <div class="loginsize">
+                <input name="user_password" class="form-control" type="password"/>
+            </div>
+        
+        </div>
+        <div class="loginbutton">
+            <button type="button" onclick="location.href ='/signup'" class="btnlogin btnrelative">회원가입</button>
+        <button type="submit" class="btnlogin btnrelative">로그인</button>
+        </div>
+        
+    </form>
+    <p></p>
+</div>
+                {{/if}}
+
+{{{body}}}<!-- 핸들바 예약어로 데이터가 바인딩되는 부분 -->
+
+<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: Dahyun_Han, Dohee_Kim</li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+		    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+			
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=27120206d14510c7ad8b8418b99243a2"></script>
+			<script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+			<script src="/lib/wow/wow.min.js"></script>
+			<script src="/js/main.js"></script>
+			<script src="/assets/js/index.js"></script>
+			
+  <script src="/lib/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.2/sweetalert2.all.min.js"></script>
+  
+			<script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+    <script type="text/javascript" src="/js/recommendapi.js"></script>
+</body>
+</html>
+<!--'Noto Sans Korean', sans-serif-->

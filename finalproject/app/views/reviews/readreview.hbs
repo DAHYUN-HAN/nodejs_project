@@ -1,0 +1,76 @@
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#read" id="portfolio-link"><span class="icon solid fa-sticky-note">리뷰 보기</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+				
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="five dark cover">
+						<div class="container">
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="read" class="two">
+						<div class="container">
+
+							<header>
+								<h2>리뷰 작성</h2>
+							</header>
+                     
+                     {{#if review.photo}}
+				<img class="img-responsive" src="/uploads/{{review.photo.filename}}" alt="...">
+			{{else}}
+				<img class="img-responsive" src="/assets/img/empty.jpg" alt="...">
+			{{/if}}
+			                    
+                       <div class="formsize">
+		<form>
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control">한줄평</label>
+					<input type="text" class="textcontrol" name="title" placeholder="{{review.title}}" readonly>
+            </div>
+
+			<div class="form-group">
+				<label for="inputEmail3" class="control">책 제목</label>
+					<input type="text" class="textcontrol" name="book" placeholder="{{review.book}}" readonly>
+                </div>
+
+
+			<div class="form-group">
+				<label for="inputEmail3" class="control">작가</label>
+					<input type="text" class="textcontrol" name="author" placeholder="{{review.author}}" readonly>
+			</div>
+
+
+			<div class="form-group">
+				<label for="inputEmail3" class="control">출판사</label>
+					<input type="text" class="textcontrol" name="publisher" placeholder="{{review.publisher}}" readonly>
+			</div>
+			
+			<div class="form-group">
+				<label for="inputEmail3" class="control">내용</label>
+					<textarea class="textcontrol" name="content"  placeholder="{{review.content}}" readonly></textarea>
+			</div>
+			
+			<div class="action">
+				<button onclick="location.href ='/editreview/{{review._id}}'" class="buttonmargin {{showstatus}}" type="button">수정</button>
+				<button onclick="location.href ='/review'" class="buttonmargin" type="button">목록으로</button>
+				<button data-id="{{review._id}}" class="buttonmargin btn-delete {{showstatus}}" type="button">삭제</button>
+            </div>
+		</form>
+</div>
+                </div>
+					</section>
+
+        </div>

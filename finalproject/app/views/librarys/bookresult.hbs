@@ -1,0 +1,78 @@
+
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#book" id="portfolio-link"><span class="icon solid fa-book-open">소장 도서</span></a></li>
+							</ul>
+						</nav>
+				</div>
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="five dark cover">
+						<div class="container">
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="book" class="two">
+						<div class="container">
+
+							<header>
+								<h2>소장 도서 정보</h2>
+							</header>
+                       <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">제목</th>
+      <th scope="col">저자</th>
+      <th scope="col">출판사</th>
+      <th scope="col">위치</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each libraryResult.items.item}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 -->
+		<tr class="table-odd">
+			<th class="titlesize">{{this.title}}</th>
+			<td>{{this.author}}</td>
+			<td>{{this.publisher}}</td>
+			<td>{{this.callNo}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+    
+    
+   <form method="post" action="/bookresult"> 
+   <input type="hidden" name="manageCd" value="{{manageCd}}">
+                    <input type="hidden" name="numOfRows" value="10">
+                          <input type="hidden" name="pageNo" value="{{pageNo}}">
+                          <input type="hidden" class="textcontrol" value="{{title}}" name="title">
+                          <input type="hidden" class="textcontrol" value="{{library}}" name="library">    
+		<div>
+  <ul id="page" class="pagination">
+  <li class="page-item {{first}}">
+      <a class="page-link pageclickpre" href="#page">&laquo;</a>
+    </li>
+{{#each print}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 -->
+    <li class="page-item {{this.Status}}">
+      <a class="page-link pageclick" href="#page">{{this.page}}</a>
+    </li>
+{{/each}}
+	 
+	 <li class="page-item {{second}}">
+      <a class="page-link pageclickne" href="#page">&raquo;</a>
+    </li>
+    </ul>
+</div>
+ </form>
+                        
+<button type="button" onclick="location.href='/librarys/{{library}}#book'">다른 책 조회하기</button>
+                        </div>
+					</section>
+        </div>

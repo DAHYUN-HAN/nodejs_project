@@ -1,0 +1,216 @@
+
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#receive" id="top-link"><span class="icon solid fa-file-import">받은 쪽지</span></a></li>
+								<li><a href="#send" id="portfolio-link"><span class="icon solid fa-file-export">보낸 쪽지</span></a></li>
+								<li><a href="#contact" id="about-link"><span class="icon solid fa-chalkboard">내가 쓴 글</span></a></li>
+								<li><a href="#signout" id="contact-link"><span class="icon solid fa-times">회원 탈퇴</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+				
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="five dark cover">
+						<div class="container">
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="receive" class="two">
+						<div class="container">
+
+							<header>
+								<h2>받은 쪽지</h2>
+							</header>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each receivemessages}}
+		<tr class="table-odd">
+		<th scope="row"><a href="/reply/{{this.sender}}/{{this.receiver}}">답장</a></th>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="send" class="three">
+						<div class="container">
+
+							<header>
+								<h2>보낸 쪽지</h2>
+							</header>
+                            <section id="testimonials">
+      <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each sendmessages}} 
+		<tr class="table-odd">
+		<th scope="row"><a data-id="{{this._id}}" type="button" class="send-delete" href="#send-delete">삭제</a></th>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+    </section><!-- #testimonials -->
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>내가 쓴 글</h2>
+							</header>
+							<a href="/review#review">도서 리뷰 전체보기</a>
+							<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">한줄평</th>
+      <th scope="col">제목</th>
+      <th scope="col">저자</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each myreviews}} 
+		<tr class="table-odd">
+		<th scope="row"><a href="/readreview/{{this._id}}">보기</a></th>
+			<td>{{this.book}}</td>
+			<td>{{this.author}}</td>
+			<td>{{this.publisher}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+
+<a href="/friends#food">혼밥 싫어요 전체보기</a>                      
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">도서관 위치</th>
+      <th scope="col">메뉴</th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each myfoods}} 
+		<tr class="table-odd">
+		<th class="showsize" scope="row"><a data-id="{{this._id}}" type="button" class="food-delete" href="#food-delete">삭제</a></th>
+		<td>{{this.location}}</td>
+			<td>{{this.food}}</td>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>  
+                      
+<a href="/friends#study">혼공 싫어요 전체보기</a>                     
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">도서관 위치</th>
+      <th scope="col">대상</th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each mystudies}} 
+		<tr class="table-odd">
+		<th class="showsize" scope="row"><a data-id="{{this._id}}" type="button" class="study-delete" href="#study-delete">삭제</a></th>
+		
+		<td>{{this.location}}</td>
+			<td>{{this.target}}</td>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>                       
+                       
+<a href="/friends#groupstudy">스터디 해요 전체보기</a>     
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">도서관 위치</th>
+      <th scope="col">주제</th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each mygroups}} 
+		<tr class="table-odd">
+		<th class="showsize" scope="row"><a data-id="{{this._id}}" type="button" class="group-delete" href="#group-delete">삭제</a></th>
+		
+		<td>{{this.location}}</td>
+			<td>{{this.subject}}</td>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>                       
+                                                                     
+                        </div>
+                </section>
+                
+                <section id="signout" class="six">
+						<div class="container">
+
+							<header>
+								<h2>회원 탈퇴</h2>
+								<span class="outred">버튼 클릭시 취소할 수 없습니다.</span>
+							</header>
+							
+							{{#each alert.message}}
+        <div class="alert alert-success">
+            {{this}}
+        </div>
+    {{/each}}
+    {{#each alert.error}}
+        <div class="alert alert-danger">
+            {{this}}
+        </div>
+    {{/each}}
+							<form method="post" action="/signout_user" class="formposition">
+							<input name="user_email" type="hidden" value="{{user.email}}"/>
+        <div class="form-group row">
+            <label for="example-date-input" class="">비밀번호</label>
+            <div class="loginsize">
+                <input name="user_password" class="passportcontrol" type="password"/>
+            </div>
+        
+        </div>
+            <button type="submit" class="buttonposition">회원탈퇴</button>
+        
+    </form>
+						</div>
+					</section>
+       
+       
+        </div>

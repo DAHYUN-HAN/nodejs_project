@@ -1,0 +1,125 @@
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#review" id="portfolio-link"><span class="icon solid fa-eye">도서 리뷰</span></a></li>
+								<li><a href="#ireview" id="about-link"><span class="icon solid fa-pen-square">내가 쓴 리뷰</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+				
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="five dark cover">
+						<div class="container">
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="review" class="two">
+						<div class="container">
+
+							<header>
+								<h2>도서 리뷰</h2>
+							</header>
+                      <a href="/writereview">작성하기</a>
+                       <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">한줄평</th>
+      <th scope="col">제목</th>
+      <th scope="col">저자</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each reviews}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 --> 
+		<tr class="table-odd">
+		<th scope="row"><a href="/readreview/{{this._id}}">보기</a></th>
+			<td>{{this.book}}</td>
+			<td>{{this.author}}</td>
+			<td>{{this.publisher}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>              
+<form method="post" action="/review">
+                         <input type="hidden" name="pageNo2" value="{{pageNo2}}">
+                          <input type="hidden" name="pageNo" value="{{pageNo}}">
+		<div>
+  <ul id="page" class="pagination">
+  <li class="page-item {{first1}}">
+      <a class="page-link pageclickpre" href="#review">&laquo;</a>
+    </li>
+{{#each print}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 -->
+    <li class="page-item {{this.Status}}">
+      <a class="page-link pageclick" href="#review">{{this.page}}</a>
+    </li>
+{{/each}}
+	 
+	 <li class="page-item {{second}}">
+      <a class="page-link pageclickne" href="#review">&raquo;</a>
+    </li>
+    </ul>
+</div>
+ </form>
+                        </div>
+					</section>
+        
+        <section id="ireview" class="three">
+						<div class="container">
+
+							<header>
+								<h2>내가 쓴 리뷰</h2>
+							</header>
+                      <a href="/writereview">작성하기</a>
+                       <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">한줄평</th>
+      <th scope="col">제목</th>
+      <th scope="col">저자</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each myreviews}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 --> 
+		<tr class="table-odd">
+		<th scope="row"><a href="/readreview/{{this._id}}">보기</a></th>
+			<td>{{this.book}}</td>
+			<td>{{this.author}}</td>
+			<td>{{this.publisher}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>          
+<form method="post" action="/review">
+                         <input type="hidden" name="pageNo" value="{{pageNo}}">
+                          <input type="hidden" name="pageNo2" value="{{pageNo2}}">   
+		<div>
+  <ul id="page" class="pagination">
+  <li class="page-item {{first2}}">
+      <a class="page-link pageclickpre2" href="#ireview">&laquo;</a>
+    </li>
+{{#each print2}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 -->
+    <li class="page-item {{this.Status}}">
+      <a class="page-link pageclick2" href="#ireview">{{this.page}}</a>
+    </li>
+{{/each}}
+	 
+	 <li class="page-item {{second2}}">
+      <a class="page-link pageclickne2" href="#ireview">&raquo;</a>
+    </li>
+    </ul>
+</div>
+ </form>
+                        </div>
+					</section>
+
+        </div>

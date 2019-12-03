@@ -1,0 +1,249 @@
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div>
+							<p></p>
+						</div>
+						
+						<div class="col-md-12">
+    {{#each alert.message}}
+        <div class="alert alert-success">
+            {{this}}
+        </div>
+    {{/each}}
+    {{#each alert.error}}
+        <div class="alert alert-danger">
+            {{this}}
+        </div>
+    {{/each}}
+    <form method="post" action="/login_user">
+        <div class="form-group row">
+            <label for="example-date-input" class="col-form-label">&nbsp&nbsp이메일</label>
+            <div class="loginsize">
+                <input name="user_email" class="form-control" type="email"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-date-input" class="col-form-label">비밀번호</label>
+            <div class="loginsize">
+                <input name="user_password" class="form-control" type="password"/>
+            </div>
+        
+        </div>
+        <div class="loginbutton">
+            <button type="button" onclick="location.href ='/signup'" class="btnlogin btnrelative">회원가입</button>
+        <button type="submit" class="btnlogin btnrelative">로그인</button>
+        </div>
+        
+    </form>
+    <p></p>
+</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-book-reader">우리는요</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-building">도서관 목록</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-book-open">도서 리뷰</span></a></li>
+								<li><a href="#contact" id="contact-link"><span class="icon solid fa-user-friends">친구 구하기</span></a></li>
+								<li><a href="#recommend"><span class="icon solid fa-book">추천 도서</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+				
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+								<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
+
+							<footer>
+								<a href="#portfolio" class="button scrolly">시작하기</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>도서관 목록</h2>
+							</header>
+
+							<div class="mappart" id="map"></div>
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>도서 리뷰</h2>
+							</header>
+                            <section id="testimonials">
+      <div>
+        <div class="justify-content-center">
+          <div>
+
+            <div class="owl-carousel testimonials-carousel">
+            
+            {{#each reviews}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 --> 
+		<div class="testimonial-item">
+		{{#if this.photo}}
+		        <img src="/uploads/{{this.photo.filename}}" class="testimonial-img" alt="">
+			{{else}}
+			<img src="/assets/img/empty.jpg" class="testimonial-img" alt="">
+			{{/if}}
+			<h3>{{this.book}}</h3>
+			<h4>{{this.author}} | {{this.publisher}}</h4>
+			<p>{{this.title}}</p>
+            <a href="/review" class="more"> 더 보기</a>
+                </div>
+                {{else}}
+                <a href="/writereview" class="more">아직 리뷰가 없어요. 첫 작성자가 되어주세요!</a>
+              </div>
+	{{/each}}
+
+          </div>
+        </div>
+
+
+      </div>
+    </section><!-- #testimonials -->
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>친구 구하기</h2>
+							</header>
+							<div class="row">
+				<div class="span3">
+					<div class="home-post">
+						<div class="post-image">
+							<img class="max-img" src="images/eating.jpg" alt="" />
+						</div>
+						<div class="post-meta">
+							<span class="date">혼밥 싫어요</span>
+						</div>
+						<div class="entry-content">
+							<p>
+                                유난히 혼자 밥 먹기 싫은 <bold>오늘</bold>, 새로운 친구와 함께 밥을 먹어보는건 어떨까요?<br><br>이곳에서 오늘의 <bold>밥친구</bold>를 찾아보세요!
+							</p>
+						</div>
+							<a href="/friends#food" class="more">바로가기</a>
+					</div>
+				</div>
+				<div class="span3">
+					<div class="home-post">
+						<div class="post-image">
+							<img class="max-img" src="images/studying.jpg" alt="" />
+						</div>
+						<div class="post-meta">
+							<span class="date">혼공 싫어요</span>
+						</div>
+						<div class="entry-content">
+							<p>
+								혼자 공부하는것보다 옆에 <bold>누군가</bold>가 있어야 공부가 더 잘되시나요?<br><br>이곳에서 오늘의 <bold>공부친구</bold>를 찾아보세요!
+							</p>
+							
+						</div>
+						<a href="/friends#study" class="more">바로가기</a>
+					</div>
+				</div>
+				<div class="span3">
+					<div class="home-post" >
+						<div class="post-image">
+							<img class="max-img" src="images/groupstudying.jpg" alt="" />
+						</div>
+						<div class="post-meta">
+							<span class="date">스터디 해요</span>
+						</div>
+						<div class="entry-content">
+							<p>
+								다같이 모여서 목표를 세우고 함께 공부를 하며 <bold>성취감</bold>을 높여보는건 어떨까요?<br><br>이곳에서 <bold>스터디 친구</bold>를 찾아보세요!
+							</p>
+						</div>
+							<a href="/friends#groupstudy" class="more">바로가기</a>
+					</div>
+				</div>
+			</div>
+                        </div>
+                </section>
+                
+                
+                <section id="recommend" class="six">
+						<div class="container">
+
+							<header>
+								<h2>추천 도서</h2>
+							</header>
+							
+			<div class="sixstyle">		
+          <div class="tab-menu">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active">
+                <a href="#p-view-1" role="tab" data-toggle="tab" id="bookname0"></a>
+              </li>
+              <li>
+                <a href="#p-view-2" role="tab" data-toggle="tab" id="bookname1"></a>
+              </li>
+              <li>
+                <a href="#p-view-3" role="tab" data-toggle="tab" id="bookname2"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane active" id="p-view-1">
+              <div class="tab-inner">
+                <div class="event-content head-team">
+                  <h4 id="author0"><a></a></h4>
+                  <p id="Area0"></p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="p-view-2">
+              <div class="tab-inner">
+                <div class="event-content head-team">
+                  <h4 id="author1"><a></a></h4>
+                  <p id="Area1"></p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="p-view-3">
+              <div class="tab-inner">
+                <div class="event-content head-team">
+                  <h4 id = "author2"><a></a></h4>
+                  <p id="Area2"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+                            </div>
+							
+						</div>
+					</section>
+       
+       
+        </div>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+			<script type="text/javascript" src="/js/showmap.js"></script>     
+              <script src="/lib/bootstrap/js/bootstrap.min.js"></script>

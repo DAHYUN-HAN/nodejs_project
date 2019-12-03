@@ -1,0 +1,90 @@
+[
+    {
+        "title": "강남도서관",
+        "code" : "MA"
+    },
+    {
+        "title": "강동도서관",
+        "code" : "MB"
+    },
+    {
+        "title": "강서도서관",
+        "code" : "MC"
+    },
+    {
+        "title": "개포도서관",
+        "code" : "MD"
+    },
+    {
+        "title": "고덕평생학습관",
+        "code" : "ME"
+    },
+    {
+        "title": "고척도서관",
+        "code" : "MF"
+    },
+    {
+        "title": "구로도서관",
+        "code" : "MG"
+    },
+    {
+        "title": "남산도서관",
+        "code" : "MH"
+    },
+    {
+        "title": "노원평생학습관",
+        "code" : "MV"
+    },
+    {
+        "title": "도봉도서관",
+        "code" : "MJ"
+    },
+    {
+        "title": "동대문도서관",
+        "code" : "MK"
+    },
+    {
+        "title": "동작도서관",
+        "code" : "ML"
+    },
+    {
+        "title": "마포평생학습관아현분관",
+        "code" : "MX"
+    },
+    {
+        "title": "마포평생학습관",
+        "code" : "MM"
+    },
+    {
+        "title": "서대문도서관",
+        "code" : "MP"
+    },
+    {
+        "title": "송파도서관",
+        "code" : "MW"
+    },
+    {
+        "title": "양천도서관",
+        "code" : "MN"
+    },
+    {
+        "title": "어린이도서관",
+        "code" : "MQ"
+    },
+    {
+        "title": "영등포평생학습관",
+        "code" : "MR"
+    },
+    {
+        "title": "용산도서관",
+        "code" : "MS"
+    },
+    {
+        "title": "정독도서관",
+        "code" : "MT"
+    },
+    {
+        "title": "종로도서관",
+        "code" : "MU"
+    }
+]

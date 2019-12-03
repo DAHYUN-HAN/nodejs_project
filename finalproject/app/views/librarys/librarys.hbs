@@ -1,0 +1,121 @@
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#info" id="portfolio-link"><span class="icon solid fa-building">도서관 정보</span></a></li>
+								<li><a href="#book" id="about-link"><span class="icon solid fa-book-open">소장 도서 검색</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+				
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="five dark cover">
+						<div class="container">
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="info" class="two">
+						<div class="container">
+							<header>
+								<h2 id="libraryname">{{title}}</h2>
+							</header>
+
+							<section id="faq">
+        <div class="row justify-content-center">
+          <div class="divsize">
+              <ul id="faq-list">
+                <li>
+                  <a data-toggle="collapse" class="collapsed" href="#faq1">도서관 위치<i class="fa fa-minus-circle"></i></a>
+                  <div id="faq1" class="collapse" data-parent="#faq-list">
+                    <p id="llocation"></p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq2" class="collapsed" id>가는 방법<i class="fa fa-minus-circle"></i></a>
+                  <div id="faq2" class="collapse" data-parent="#faq-list">
+                    <p id="lway"></p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq3" class="collapsed">휴관일<i class="fa fa-minus-circle"></i></a>
+                  <div id="faq3" class="collapse" data-parent="#faq-list">
+                    <p id="lholiday"></p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq4" class="collapsed">대출안내<i class="fa fa-minus-circle"></i></a>
+                  <div id="faq4" class="collapse" data-parent="#faq-list">
+                    <p id="lborrow"></p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq5" class="collapsed">회원가입 요건<i class="fa fa-minus-circle"></i></a>
+                  <div id="faq5" class="collapse" data-parent="#faq-list">
+                    <p id="lsignin"></p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq6" class="collapsed">전화번호<i class="fa fa-minus-circle"></i></a>
+                  <div id="faq6" class="collapse" data-parent="#faq-list">
+                    <p id="ltel"></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <a data-toggle="collapse" href="#faq7" class="collapsed">도서관 소개<i class="fa fa-minus-circle"></i></a>
+                  <div id="faq7" class="collapse" data-parent="#faq-list">
+                    <p id="linfo"></p>
+                  </div>
+                </li>
+      
+              </ul>
+          </div>
+
+      </div>
+
+    </section>
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="book" class="three">
+						<div class="container">
+
+							<header>
+								<h2>소장 도서 검색</h2>
+							</header>
+                      <div class="col-md-12">
+                      <form method="post" action="/bookresult">
+                    <input type="hidden" name="manageCd" value="{{code}}">
+                    <input type="hidden" name="numOfRows" value="10">
+                          <input type="hidden" name="pageNo" value="1">
+                          <input type="hidden" name="library" value="{{title}}">
+    <div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control">책 제목</label>
+					<input type="text" class="textcontrol" name="title">
+            </div>
+            <button type="submit" class="btn btn-book-submit">조회하기</button>
+                          </form>
+</div>
+                      
+                       
+                        </div>
+					</section>
+
+        </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>        
+<script type="text/javascript" src="/js/libraryapi.js"></script>

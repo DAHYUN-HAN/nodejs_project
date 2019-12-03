@@ -1,0 +1,184 @@
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#food" id="portfolio-link"><span class="icon solid fa-utensil-spoon">혼밥 싫어요</span></a></li>
+								<li><a href="#study" id="about-link"><span class="icon solid fa-eraser">혼공 싫어요</span></a></li>
+								<li><a href="#groupstudy" id="about-link"><span class="icon solid fa-user-friends">스터디 해요</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+				
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="five dark cover">
+						<div class="container">
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="food" class="two">
+						<div class="container">
+
+							<header>
+								<h2>혼밥 싫어요</h2>
+							</header>
+                      <a href="/writefood">작성하기</a>
+                       <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">도서관 위치</th>
+      <th scope="col">메뉴</th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each foods}}  
+		<tr class="table-odd">
+		<th class="showsize" scope="row"><a href="/foodmessage/{{this.user}}">연락하기</a></th>
+		<td>{{this.location}}</td>
+			<td>{{this.food}}</td>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+                
+<form method="post" action="/friends">
+                         <input type="hidden" name="pageNo2" value="{{pageNo2}}">
+                          <input type="hidden" name="pageNo" value="{{pageNo}}">
+                          <input type="hidden" name="pageNo2" value="{{pageNo3}}">  
+		<div>
+  <ul id="page" class="pagination">
+  <li class="page-item {{first1}}">
+      <a class="page-link pageclickpre" href="#food">&laquo;</a>
+    </li>
+{{#each print}} 
+    <li class="page-item {{this.Status}}">
+      <a class="page-link pageclick" href="#food">{{this.page}}</a>
+    </li>
+{{/each}}
+	 
+	 <li class="page-item {{second}}">
+      <a class="page-link pageclickne" href="#food">&raquo;</a>
+    </li>
+    </ul>
+</div>
+ </form>
+                        </div>
+					</section>
+        
+        <section id="study" class="three">
+						<div class="container">
+
+							<header>
+								<h2>혼공 싫어요</h2>
+							</header>
+                      <a href="/writestudy">작성하기</a>
+                       <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">도서관 위치</th>
+      <th scope="col">대상</th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each studys}} 
+		<tr class="table-odd">
+		<th class="showsize" scope="row"><a href="/studymessage/{{this.user}}">연락하기</a></th>
+		
+		<td>{{this.location}}</td>
+			<td>{{this.target}}</td>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+                
+<form method="post" action="/friends">
+                         <input type="hidden" name="pageNo" value="{{pageNo}}">
+                          <input type="hidden" name="pageNo2" value="{{pageNo2}}"> 
+                          <input type="hidden" name="pageNo2" value="{{pageNo3}}">    
+		<div>
+  <ul id="page" class="pagination">
+  <li class="page-item {{first2}}">
+      <a class="page-link pageclickpre2" href="#ireview">&laquo;</a>
+    </li>
+{{#each print2}}
+    <li class="page-item {{this.Status}}">
+      <a class="page-link pageclick2" href="#ireview">{{this.page}}</a>
+    </li>
+{{/each}}
+	 
+	 <li class="page-item {{second2}}">
+      <a class="page-link pageclickne2" href="#ireview">&raquo;</a>
+    </li>
+    </ul>
+</div>
+ </form>
+                        </div>
+					</section>
+        
+        <section id="groupstudy" class="four">
+						<div class="container">
+
+							<header>
+								<h2>스터디 해요</h2>
+							</header>
+                      <a href="/writegroupstudy">작성하기</a>
+                       <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">도서관 위치</th>
+      <th scope="col">주제</th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each groupstudys}} 
+		<tr class="table-odd">
+		<th class="showsize" scope="row"><a href="/groupstudymessage/{{this.user}}">연락하기</a></th>
+		
+		<td>{{this.location}}</td>
+			<td>{{this.subject}}</td>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+                
+<form method="post" action="/friends">
+                         <input type="hidden" name="pageNo" value="{{pageNo}}">
+                          <input type="hidden" name="pageNo2" value="{{pageNo2}}"> 
+                          <input type="hidden" name="pageNo3" value="{{pageNo3}}">    
+		<div>
+  <ul id="page" class="pagination">
+  <li class="page-item {{first3}}">
+      <a class="page-link pageclickpre3" href="#ireview">&laquo;</a>
+    </li>
+{{#each print3}} 
+    <li class="page-item {{this.Status}}">
+      <a class="page-link pageclick3" href="#ireview">{{this.page}}</a>
+    </li>
+{{/each}}
+	 
+	 <li class="page-item {{second3}}">
+      <a class="page-link pageclickne3" href="#ireview">&raquo;</a>
+    </li>
+    </ul>
+</div>
+ </form>
+                        </div>
+					</section>
+
+        </div>

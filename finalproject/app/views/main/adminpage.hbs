@@ -1,0 +1,80 @@
+
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#receive" id="top-link"><span class="icon solid fa-file-import">쪽지 목록</span></a></li>
+								<li><a href="#send" id="portfolio-link"><span class="icon solid fa-user-friends">회원 목록</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+				
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="five dark cover">
+						<div class="container">
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="receive" class="two">
+						<div class="container">
+
+							<header>
+								<h2>쪽지 목록</h2>
+							</header>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each messages}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 --> 
+		<tr class="table-odd">
+		<th scope="row"><a href="/readreview/{{this._id}}">삭제</a></th>
+			<td>{{this.content}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+                </div>
+					</section>
+
+				<!-- About Me -->
+					<section id="send" class="three">
+						<div class="container">
+
+							<header>
+								<h2>회원 목록</h2>
+							</header>
+                            <section id="testimonials">
+      <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">관리자</th>
+      <th scope="col">이름</th>
+      <th scope="col">이메일</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each users}} <!-- 는 핸들바의 루프 템플릿으로 students 객체(배열)의 크기만큼 반복 처리됨 --> 
+		<tr class="table-odd">
+		<th scope="row">{{this.admin}}</th>
+			<td>{{this.name}}</td>
+			<td>{{this.email}}</td>
+		</tr>
+	{{/each}}
+  </tbody>
+</table>
+    </section><!-- #testimonials -->
+						</div>
+					</section>
+        </div>

@@ -1,0 +1,53 @@
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#review" id="portfolio-link"><span class="icon solid fa-pencil-alt">답장보내기</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+				
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="five dark cover">
+						<div class="container">
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="review" class="two">
+						<div class="container">
+
+							<header>
+								<h2>답장 보내기</h2>
+							</header>
+                      
+                      
+                      
+                       <div class="formsize">
+		<form style="" method="post" action="/sendreplymessage" class="form-horizontal">
+			
+			<div>
+				<label for="inputEmail3" class="control">내용</label>
+					<textarea class="textcontrol" name="content" placeholder=""></textarea>
+			</div>
+        
+		    <input type="hidden" class="textcontrol" name="receiver" value="{{receiver}}">
+		    <input type="hidden" class="textcontrol" name="sender" value="{{sender}}">
+
+				<div>
+                   <p></p>
+                    <button type="button" class="btn btn-send">보내기</button>
+				</div>
+		</form>
+</div>
+                </div>
+					</section>
+
+        </div>
